@@ -40,8 +40,7 @@ def header_format(word):
 	else:
 		header_left = symbol_needed / 2
 		header_right = header_left + 1
-	header = "=" * header_left + " " + word + " " + "=" * header_right
-	print " "
+	header = "=" * header_left + " " + word + " " + "=" * header_right +  "\n"
 	print header
 	return
 
@@ -57,7 +56,7 @@ def level_selection():
 		if level_selected == None:
 			print "Not a valid level. Choose again"
 		else:
-			print "You chose " + level_selected + "! Good Luck!"
+			print "You chose " + level_selected + "! Good Luck!" +  "\n"
 			index += 1
 			level_index = level.index(level_selected)
 	return level_index
@@ -71,13 +70,11 @@ def replace_with_answer2(quiz, blank, answer): # holy cow, this is so much simpl
 	while index == 0:
 		user_input = raw_input("What should go in " + blank + "?: ").lower()
 		if user_input == answer.lower():
-			print "Correct!"
-			print ""
+			print "Correct! \n"
 			quiz = quiz.replace(blank, answer)
 			index += 1
 		else:
-			print "Incorrect! Try again!"
-			print ""
+			print "Incorrect! Try again! \n"
 	return quiz
 
 
@@ -94,9 +91,7 @@ def play_game():
 		selected_quiz = replace_with_answer2(selected_quiz, corresponding_blank, corresponding_answer)
 		index += 1
 	header_format("You successfully answered all questions!")
-	print selected_quiz
-	print ""
+	print selected_quiz +  "\n"
 	return
 
 play_game()
-
